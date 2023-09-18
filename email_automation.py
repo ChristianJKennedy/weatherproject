@@ -80,8 +80,8 @@ def send_email(subject, receiver_email, name):
 # Test
 if __name__ == "__main__":
     send_email(subject='Arcteryx shell today?',
-               receiver_email="christiankennedy96@gmail.com",
-               name='Christian')
+               receiver_email="test_user@optout.com",
+               name='John Smith')
 
 
 
