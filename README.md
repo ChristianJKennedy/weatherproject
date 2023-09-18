@@ -3,11 +3,8 @@
 **Table of Contents**
 - [About](#about)
 - [Features](#features)
-- [Getting Started](#getting-started)
 - [Usage](#usage)
 - [Dependencies](#dependencies)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## About
 
