@@ -8,8 +8,16 @@ import requests
 # pprint allows data to be printed in an orderly easy to read format
 from pprint import pprint
 
-# API key
-API_Key = 'a04d436a3b9650b4d9c365c734a2c8a4'
+# import dotenv file to access API_KEY
+import os
+from dotenv import load_dotenv
+
+# Load the .env file
+load_dotenv()
+
+# Access the API key
+API_Key = os.getenv("API_KEY")
+
 
 # city user input
 # print('Are we going to be arc\'d up today?')

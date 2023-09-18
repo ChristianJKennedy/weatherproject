@@ -53,6 +53,8 @@ t1 = Weather(city_name,
              uv_index)
 
 t2 = Weather(city_name, fahrenheit_temp, humidity, wind_speed, description, uv_index)
+
+# test cases
 # print(t1), f'\n', '-'*20, f'\n', t2)
 # print('-'*50)
 #

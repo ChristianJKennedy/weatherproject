@@ -77,10 +77,11 @@ def send_email(subject, receiver_email, name):
         server.login(sender_email, password_email)
         server.sendmail(sender_email, receiver_email, msg.as_string())
 
+# Test
 if __name__ == "__main__":
-    send_email(subject='ARC\'d up today?',
-               receiver_email="mariakingsbury1@gmail.com",
-               name='Maria')
+    send_email(subject='Arcteryx shell today?',
+               receiver_email="christiankennedy96@gmail.com",
+               name='Christian')
 
 
 

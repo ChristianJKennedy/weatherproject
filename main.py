@@ -21,7 +21,7 @@ def query_data_and_send_emails(df):
     for _, row in df.iterrows():
         if (present == row['date'].date()) and (row['notifications_yn'] == 'Yes'):
             send_email(
-                subject='ARC\'d up today?',
+                subject='Arcteryx shell today?',
                 receiver_email=row['Email'],
                 name=row['Name'])
 
