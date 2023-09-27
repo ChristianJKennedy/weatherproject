@@ -5,8 +5,6 @@
 from Arc_today import *
 from weather_uvindex_pull import *
 
-
-
 # create a weather class that includes all general weather information
 # after weather class created, create child subclasses to extract specific weather data depending upon what the user
 # cares about
@@ -35,13 +33,13 @@ class Precipiation(Weather):
 
     def precip(self):
         if 'rain' in description:
-            print('It is raining, wear the ARC.')
+            print('It is raining, wear your rain jacket.')
 
     def __str__(self):
         return f'{description}'
 '''
 NEXT STEPS HERE'''
-# figure out a way to create multiple instances  to pull weather data form multiple cities
+# figure out a way to create multiple instances  to pull weather data from multiple cities
 # Maybe put user input into this module for each instance
 
 
@@ -54,9 +52,9 @@ t1 = Weather(city_name,
 
 t2 = Weather(city_name, fahrenheit_temp, humidity, wind_speed, description, uv_index)
 
-# test cases
-# print(t1), f'\n', '-'*20, f'\n', t2)
-# print('-'*50)
-#
-# p1 = Precipiation(fahrenheit_temp, humidity, description)
-# print(p1)
+#test cases
+#print(t1, f'\n', '-'*20, f'\n', t2)
+#print('-'*50)
+
+p1 = Precipiation(fahrenheit_temp, humidity, description)
+#print(p1)

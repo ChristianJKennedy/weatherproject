@@ -26,13 +26,11 @@ sender_email = os.getenv('EMAIL')
 password_email = os.getenv('PASSWORD')
 
 
-
-
 def send_email(subject, receiver_email, name):
     # create base text
     msg = EmailMessage()
     msg["subject"] = subject
-    msg['From'] = formataddr(("Arc\'d up?", f'{sender_email}'))
+    msg['From'] = formataddr(("Rain jacket today?", f'{sender_email}'))
     msg['To'] = receiver_email
     msg['BCC'] = sender_email
 

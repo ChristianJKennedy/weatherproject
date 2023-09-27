@@ -1,16 +1,15 @@
-# Program to check weather and return with arcteryx shall be worn
+# Program to check weather and return with rain jacket should be worn
 '''
 website: https://openweathermap.org
 '''
 # import requests to request data
 import requests
 
-# pprint allows data to be printed in an orderly easy to read format
+# pprint allows data to be printed in an orderly easy to read format, import dotenv file to access API_KEY
 from pprint import pprint
-
-# import dotenv file to access API_KEY
 import os
 from dotenv import load_dotenv
+import pandas as pd
 
 # Load the .env file
 load_dotenv()
@@ -18,10 +17,27 @@ load_dotenv()
 # Access the API key
 API_Key = os.getenv("API_KEY")
 
+'''Update: Gather user data put in arc_today rather than main file to gather user input city'''
+# public google sheet url
+SHEET_ID = '10_CZKmK5q0CQjwvGMmm31Cciy3QfnZy-eZAl42MAlqI'
+SHEET_NAME = 'Sheet1'
+URL = f'https://docs.google.com/spreadsheets/d/{SHEET_ID}/gviz/tq?tqx=out:csv&sheet={SHEET_NAME}'
 
-# city user input
-# print('Are we going to be arc\'d up today?')
-city = 'memphis' # input('Enter your city: ')
+# Create function for data framework
+def load_df(url):
+    today_date = ['date', 'notifications_yn']
+    df = pd.read_csv(url, parse_dates=today_date)
+    return df
+
+# function to isolate city from df
+def user_city(df):
+    for _, row in df.iterrows():
+        city = row['city']
+    return city
+
+# gather data framework for user data
+df = load_df(URL)
+city = user_city(df)
 
 # Url to pull data
 base_url = 'http://api.openweathermap.org/data/2.5/weather?appid='+API_Key+'&q='+city
@@ -59,6 +75,8 @@ if __name__ == '__main__':
     print(f"Wind speed: {wind_speed} m/s")
     print(f"Description: {description}")
 
+    print(df)
+    print(city)
 
 
 
